@@ -6,6 +6,7 @@ Node.js module (since that's what this is!)
 const assert = require("assert");
 const R = require("ramda");
 const { isTwilio } = require("../lib/example_helper");
+const { isPull }  = require ("../lib/example_helper");
 
 /*
 Objective validators export a single function, which is passed a helper
@@ -25,18 +26,16 @@ module.exports = async function (helper) {
   // negative feedback at once, have the player iterate.
   if (!answer1 || !isTwilio(answer1)) {
     return helper.fail(`
-      The answer to the first question is incorrect. The company that
-      makes TwilioQuest starts with a "T" and ends with a "wilio".
+      "The answer to the first question is incorrect. The command can be  
+      'git remote add' + local repository is known to be origin ".
     `);
   }
 
   // You can use npm or core Node.js dependencies in your validators!
-  try {
-    assert.strictEqual(R.add(2, 2), Number(answer2));
-  } catch (e) {
+  if(!answer2 || !isPull(answer2)){
     return helper.fail(`
-      The second answer you provided was either not a number, or not the
-      correct response for "what is 2 + 2".
+      The second answer you provided was not correct , the command is related to update the local repo
+      with the changes of the remote repository.
     `);
   }
 

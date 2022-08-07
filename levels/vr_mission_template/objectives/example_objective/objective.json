@@ -6,13 +6,13 @@
       "name": "answer1",
       "type": "text",
       "placeholder": "type your answer here",
-      "label": "What is the name of the company that makes TwilioQuest?"
+      "label": "What command lets you create a connection between a local and remote repositiory?"        
     },
     {
       "name": "answer2",
       "type": "text",
       "placeholder": "type your answer here",
-      "label": "What is 2 + 2? Write the numerical response below."
+      "label": "Which of following Command is equivalent to fetch and merge?"
     }
   ],
   "rewards": {
